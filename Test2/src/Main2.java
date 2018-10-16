@@ -30,11 +30,16 @@ public class Main2 {
 				}
 			}
 		}
-		System.out.println(solve());
+		solve(0,0);
 		
 	}
 	
-	public static int solve() {
+	public static int solve(int a, int visitNum) {
+		
+	if(visitNum == m||visitNum == m) {
+		
+	}
+		
 		int[] minVals = new int[list.size()];
 		int result=0;
 		for(int idx=0; idx <list.size();idx++) {
@@ -58,6 +63,10 @@ public class Main2 {
 		}
 		return result;
 	}
+	
+	
+	
+	
 }
 
 class Node{
