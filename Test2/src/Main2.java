@@ -3,10 +3,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main2 {
-	static ArrayList<Node> list;
-	static ArrayList<Node> list2;
-	static int[] minVals;
-	static int m;
+	static ArrayList<Node> list = new ArrayList<Node>();
+	static ArrayList<Node> list2 = new ArrayList<Node>();
+	static int m = 0;
 	
 	
 	public static void main(String[] args) {
@@ -35,13 +34,14 @@ public class Main2 {
 		
 	}
 	
-	static int solve() {
+	public static int solve() {
+		int[] minVals = new int[list.size()];
 		int result=0;
 		for(int idx=0; idx <list.size();idx++) {
 			int chiX = list.get(idx).x;
 			int chiY = list.get(idx).y;
 			int dist = 0;
-			
+			minVals[idx] = 0;
 			for(int subIdx=0; subIdx<list2.size();subIdx++) {
 				int homeX = list2.get(subIdx).x;
 				int homeY = list2.get(subIdx).y;
@@ -56,19 +56,16 @@ public class Main2 {
 		for(int idx=0; idx<m;idx++) {
 			result = result +minVals[idx];
 		}
-		
 		return result;
 	}
-
-
 }
 
 class Node{
 	int x;
 	int y;
-	Node(int x, int y){
-		System.out.println(x);System.out.println(y);
+	public Node(int x, int y){
 		this.x = x;
 		this.y = y;
 	}
 }
+
